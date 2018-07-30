@@ -1,0 +1,31 @@
+from,to,type,weight
+TM,adidas,2,3
+TM,Barilla,2,3
+TM,REWE,2,3
+TM,weber,2,3
+TM,Gillette,2,3
+TM,YoungWings,1,3
+TM,EA SPORTS FIFA,2,2
+TM,Verlagsgruppe Oetinger,2,1
+TM,caseable,2,1
+TM,United Charity,1,2
+TM, KiO (Kinderhilfe Organtransplantation),1,2
+TM,Stiftung RTL - Wir helfen Kindern e.V,1,1
+TM,Aktion Ehrenamt des DFB,1,1
+TM,MyTopps,2,1
+TM,Sky Charity,1,1
+MH,adidas,2,3
+MH,Boss,2,3
+MH,TAGHeuer,2,3
+MH,unicef,1,3
+MH,common goal ,1,3
+MH,Ferrero,2,2
+MH,Head & Shoulders,2,2
+MH,Opel,2,1
+MH,Telekom,2,1
+MN,Manuel-Neuer-Kids-Foundation,1,3
+MN,Coca-Cola,2,3
+MN,Sony Alpha,2,2
+MN,Ferrero,2,2
+MN,Head & Shoulders,2,2
+MN,Allianz,2,1
