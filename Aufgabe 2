@@ -1,0 +1,103 @@
+library("igraph")
+el <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/students/edges.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/hdm-crpr/226305/master/data/students/nodes.csv", header=T, as.is=T, sep = ",")
+eties <-as.matrix(el)
+s <- graph_from_data_frame(d=eties, vertices=nodes, directed=T)
+s
+
+# Aufgabe 2:  Erstellen Sie ein Ego-Netzwerk mit dem am besten vernetzten Raucher? Wer ist mit dem Raucher direkt verbunden? Sind Raucher die besseren Broker?
+
+V(s)$shape = "circle"
+# definiert, dass alle Knoten als Kreis auftreten
+
+smokers <- V(s)[smoke == "2"]
+# wöhlt alle Knoten aus, die das Vertex-Attribut "2" bei $smoke gesetzt haben
+
+smokers
+
+V(s)[smokers]$shape = "square"
+# weist allen Werten von Smokers den Shape "square" zu.
+plot (s)
+
+# Berechnung der Betweeness des Netzwerks s
+bs <- betweenness(s, v = V(s),
+                  directed = TRUE,
+                  weights = NULL,
+                  nobigint = TRUE,
+                  normalized = TRUE)
+bs
+
+plot(s,
+     vertex.size=bs*100,
+     edge.arrow.size=.2,
+     main="Verteilung Betweenness im Netzwerk")
+
+# Akteur 19 hat den höchsten Betweenness-Wert
+
+# Wir wissen, dass Knoten 19 mit 0,17 den höchsten betweeness-Faktor hat. Wir wollen jetzt das direkte Netzwerk von 19 sehen. Dazu verwenden wir den Befehl make_ego_graph.
+smoke_king <- make_ego_graph(s,
+                          order = 1,
+                          nodes = V(s)$name == 19,
+                          mode ="all")
+
+plot(smoke_king[[1]],
+     edge.arrow.size=.2,
+     edge.curved=.2,
+     main="Der/ die Smoke-King",
+     sub="Raucher mit dem höchsten betweeness-Faktor")
+
+# Die direkten Verbindungen des Smoke-Kings sind: 4,27,33,11,7,31,9,38
+
+# Teilnetzwerk Nicht-Raucher
+
+ns <- delete_vertices(s, V(s)[smoke == "2"])
+plot(ns, main="Nicht-Raucher")
+
+# Teilnetzwerk Raucher
+
+sm <- delete_vertices(s, V(s)[smoke == "1"])
+plot(sm, main="Raucher")
+
+# Berechnung der Betweeness der Teilnetzwerke
+
+# Teilnetzwerk sm
+
+bssm <- betweenness(sm, v = V(sm),
+                  directed = TRUE,
+                  weights = NULL,
+                  nobigint = TRUE,
+                  normalized = TRUE)
+bssm
+plot(bssm,
+     vertex.size=bs*100,
+     edge.arrow.size=.2,
+     main="Verteilung Betweenness im Netzwerk")
+
+# Teilnetzwerk ns
+
+bsns <- betweenness(ns, v = V(ns),
+                    directed = TRUE,
+                    weights = NULL,
+                    nobigint = TRUE,
+                    normalized = TRUE)
+bsns
+plot(bsns,
+     vertex.size=bs*100,
+     edge.arrow.size=.2,
+     main="Verteilung Betweenness im Netzwerk")
+
+# Raucher sind die besseren Broker. 
+
+# Bonusfrage: Wie viele der Raucher sind tätowiert?
+
+# Teilnetzwerk Raucher
+
+sm <- delete_vertices(s, V(s)[smoke == "1"])
+plot(sm, main="Raucher")
+
+# Teilnetzwerk Raucher
+
+smt <- delete_vertices(sm, V(sm)[tatoo == "2"])
+plot(smt, main="tätowierte Raucher")
+
+# Sechs der neun Raucher sind tätowiert.
