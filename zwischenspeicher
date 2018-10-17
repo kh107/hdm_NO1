@@ -1,0 +1,16 @@
+# KNOTEN/VERTEX-FORM ändern.
+# Wie jedes andere Attribut lässt sich auch die Form des Knotens ändern. In diesem Fall wollen wir, dass alle Werbepartner und soziale Organisationen V(dfb)$Type als Quadrat dargestellt werden.
+
+V(dfb)$shape = "square"
+# definiert, dass alle Knoten als Quadrat auftreten
+
+spieler <- V(dfb)[Type == "1"]
+# wöhlt alle Knoten aus, die das Vertex-Attribut "1" bei $Type gesetzt haben
+
+spieler
+
+V(dfb)[spieler]$shape = "circle"
+# weist allen Werten von spieler den Shape "circle" zu.
+
+plot(dfb)
+
