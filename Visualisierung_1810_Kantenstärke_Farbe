@@ -34,24 +34,23 @@ V(dfb)$color <- faerbung[V(dfb)$Type]
 
 plot(dfb)
 
-# Das Netzwerk wird entzerrt
+# Das Netzwerk wird entzerrt mit der Variable
 coords <- layout_with_kk(dfb)*0.5
 
 plot(dfb, vertex.frame.color="black", vertex.label.family = "Helvetica", vertex.label.color = "grey25", layout=coords, edge.color="grey80")
 
 
-# Die Fenstergröße wird mit den x- und y-Werten an das Netzwerk angepasst.
+# Die Fenstergröße wird mit den x- und y-Werten an das Netzwerk angepasst (muss ausprobiert und angepasst werden).
 plot(dfb, vertex.frame.color="black", vertex.label.family = "Helvetica", vertex.label.color = "grey25", layout=coords, rescale=FALSE, ylim=c(-1.5,2),xlim=c(-4,4), asp = 0, edge.color="grey80")
 
 
-# EDGES schöner machen
+# Kantenstärke visualieren und Krümmung einstellen
 
 # Welche Argumente machen Kanten schöner:
 edge.curved=.2 # Krümmung der Kanten
 edge.width=E(dfb)$weight # Gewicht der Kanten nach Edge-Attribut "weight"
 
 
-# Beispiel
 plot(dfb,
      edge.curved=.4,
      edge.width=E(dfb)$weight,
