@@ -1,0 +1,91 @@
+# Edge- und Nodelist koppeln
+
+
+# Gesamtnetzwerk dfb 
+
+library(igraph)
+# liest die Dateien direkt aus dem github-Verzeichnis ein
+el <- read.csv("https://raw.githubusercontent.com/kh107/hdm_NO1/master/1810_Edgelist-aktuell.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/kh107/hdm_NO1/master/Nodelist_1810-final.csv", header=T, as.is=T, sep = ",")
+# prüft, ob alle Variablen eingelesen wurden
+head(el)
+head(nodes)
+# wandelt die edgelist in eine Matrix um und baut das igraph-Objekt
+hties <-as.matrix(el)
+dfb <- graph_from_data_frame(d=hties, vertices=nodes, directed=F)
+dfb
+plot(dfb)
+
+# EINFÄRBEN aufgrund von Vertex-Attributen
+
+# Im Netzwerk sind Spieler, Engagement und Werbekooperationen abgelegt, die über das Vertex.Attribut $Type mit "1" (Spieler) oder "2" (Werbekooperationen) oder "3" (soziales Engagement) kodiert sind.
+vertex.attributes(dfb)$type
+
+#Alle Spieler sollen nun mit der Farbe grün, alle Werbekooperationen mit der Farbe grau und soziales Engagement mit der Farbe blau visualisiert werden.
+
+#FARBEN nach Vertex-Attributen definieren
+faerbung <- c("green", "grey", "blue")
+
+#definiert das Farbspektrum, der verwendeten Farben und legt diese in einem neuen Vector faerbung fest. Da wir wissen, dass wir bei §Type nur drei Werte haben (Spieler, Werbekooperationen, soziales Engagement) brauchen wir auch drei Werte. Die direkten Farbpaletten sind hier hinterlegt: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf.
+
+
+V(dfb)$color <- faerbung[V(dfb)$Type]
+# weist dem Vertex-Attribut color die Funktion faerbung zu, die wir vorher mit drei Farben definiert haben.
+
+plot(dfb)
+
+# Das Netzwerk wird entzerrt mit der Variable
+coords <- layout_with_kk(dfb)*0.5
+
+plot(dfb, vertex.frame.color="black", vertex.label.family = "Helvetica", vertex.label.color = "grey25", layout=coords, edge.color="grey80")
+
+
+# Die Fenstergröße wird mit den x- und y-Werten an das Netzwerk angepasst (muss ausprobiert und angepasst werden).
+plot(dfb, vertex.frame.color="black", vertex.label.family = "Helvetica", vertex.label.color = "grey25", layout=coords, rescale=FALSE, ylim=c(-1.5,2),xlim=c(-4,4), asp = 0, edge.color="grey80")
+
+
+# Kantenstärke visualieren und Krümmung einstellen
+
+# Welche Argumente machen Kanten schöner:
+edge.curved=.2 # Krümmung der Kanten
+edge.width=E(dfb)$weight # Gewicht der Kanten nach Edge-Attribut "weight"
+
+
+plot(dfb,
+     edge.curved=.4,
+     edge.width=E(dfb)$weight,
+     main="Gesamtnetzwerk DFB")
+
+# Relative Werte durch die Größe der Knoten abbilden
+
+# berechnet den Degree-Wert für alle Knoten und weist ihm die Variable "dh" zu.
+knotengroesse <- degree(dfb)
+knotengroesse
+
+# plottet da Netzwerk und ändert die Größe des Knotens nach dem Degree-Wert
+par(mfrow=c(1,1))
+plot(dfb, vertex.size=knotengroesse, main="Gesamtnetzwerk DFB mit Knotengröße", sub="n=38, mode=all")
+
+# SELEKTION und VERGLEICH von zwei Teilnetzwerken
+# wir wollen Soziales Engagement (soz) mit Werbekooperationen (werb) vergleichen. Deshalb müssen wir das Netzwerk erst noch in zwei separate Netzwerke aufteilen:
+
+# Selektion in Teilnetzwerk soz und werb
+edge.attributes(dfb)
+edge.attributes(dfb)$relation
+# das edge attribut relationship ist in 1 (Soziales) und 2 (Werbekooperation) kodiert.
+
+soz <- subgraph.edges(dfb, E(dfb)[relationship == 1])
+soz
+edge.attributes(soz)$relation
+plot(soz, edge.arrow.size=0.1, main="Soziales Engagement")
+
+werb <- subgraph.edges(dfb, E(dfb)[relationship == 2])
+werb
+edge.attributes(werb)$relation
+plot(werb, edge.arrow.size=0.1, main="Werbekooperationen")
+
+# direkter Vergleich der beiden Netzwerke herstellen
+
+par(mfrow=c(1,2), mar=c(0,0,2,0))
+plot(soz, layout = layout_with_fr, edge.arrow.size=0.1, main="Soziales Engagement")
+plot(werb, layout = layout_with_fr, edge.arrow.size=0.1, main="Werbekooperationen")
