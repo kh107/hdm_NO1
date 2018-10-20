@@ -68,7 +68,7 @@ knotengroesse
 par(mfrow=c(1,1)) 
 
 plot(dfb, 
-     vertex.size=knotengroesse, # führt die relative Größe der Knoten aus
+     vertex.size=knotengroesse*4, # führt die relative Größe der Knoten aus
      vertex.frame.color="black", # bestimmt die farbliche Umrandung der Knoten
      vertex.label.family = "Helvetica", # legt die Schrift fest
      vertex.label.color = "grey25", #legt die Schriftfarbe der Knotenbezeichnung fest
