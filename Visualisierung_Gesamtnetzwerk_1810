@@ -81,13 +81,4 @@ plot(dfb,
 
 
 
-# PROBLEM: Führt man das unten aus, ändert sich die Größe der Knoten. Allerdings funktionieren dann die relativen Größen und das "Design" nicht mehr
-V(dfb)$size <- 8
-plot(dfb)
-
-
-
-
-
-
 
