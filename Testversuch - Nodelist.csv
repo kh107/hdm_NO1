@@ -1,0 +1,103 @@
+id,akteursbezeichnung,follower,marktwert,alter,berater,nationalitaet,type,ausstatter
+MN,Manuel Neuer,10100000,30000000,32,PRO Profil GmbH,1,1,1
+MP,Marvin Plattenhardt,60800,17000000,26,Briem Soccer Connection,1,1,1
+JH,Jonas Hector,0,15000000,28,act,1,1,1
+MG,Matthias Ginter,334000,25000000,24,ISMG International,1,1,1
+MH,Mats Hummels,2500000,60000000,29,HMH Sportmanagement,1,1,1
+SK,Sami Khedira,4800000,25000000,31,NGM SPORTS,1,1,1
+JD,Julian Draxler,3500000,30000000,25,ROGON,2,1,1
+TK,Toni Kroos,19000000,80000000,28,SportsTotal,2,1,1
+TW,Timo Werner,441000,60000000,22,Karlheinz Foerster,1,1,1
+MO,Mesut Oezil,17200000,45000000,29,Family and Football,2,1,1
+MR,Marco Reus,6800000,40000000,29,SportsTotal,1,1,1
+KT,Kevin Trapp,2500000,60000000,29,HMH Sportmanagement,1,1,1
+TM,Thomas Mueller,5900000,55000000,29,Koegl und Partner GmbH,2,1,1
+LG,Leon Goretzka,572000,40000000,23,Joerg Neubauer,1,1,1
+NS,Niklas Suele,402000,45000000,23,Karlheinz Foerster,1,1,1
+AR,Antonio Ruediger,823000,40000000,25,FSB Spielerberatung GmbH,2,1,1
+JB,Jerome Boateng,5700000,45000000,30,CN Sports,1,1,1
+JK,Joshua Kimmich,1900000,55000000,23,fair sport GmbH,1,1,1
+SR,Sebastian Rudy,302000,15000000,28,Familienangehoeriger Rudy,1,1,1
+JBR,Julian Brandt,361000,45000000,22,Familienangehoeriger Brandt,1,1,1
+IG,Ilkay Guendogan,2200000,40000000,27,Family and Football,2,1,1
+MS,Marc-Andre ter Stegen,7400000,60000000,26,Coaches and More GmbH,2,1,1
+MGO,Mario Gomez,853000,6000000,33,fair sport GmbH,1,1,1
+11_Teamsports,11 Teamsports,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Adidas,Adidas,n.a.,n.a.,n.a.,n.a.,n.a.,2,2
+Aktion_Ehrenamt_Des_Dfb,Aktion Ehrenamt des Dfb,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Allianz,Allianz,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Apple_Music,Apple Music,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Barilla,Barilla,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Beko,Beko,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+BigShoe,BigShoe,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Braun,Braun,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Caseable,Caseable,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+City_in_the_Community_Foundation,City in the Community Foundation,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Coca_Cola,Coca Cola,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Common_Goal,Common Goal,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Daimler,Daimler,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Die_Wiege,Die Wiege,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Disneys_Die_Monster_Uni,Disney die Monster Uni,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+DKMS,DKMS,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Doppelherz,Doppelherz,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+EA_Sports_Fifa,EA Sports Fifa,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Edel_Optics,Edel Optics,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+EHFK,EHFK,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Elterninitiative_Saarland,Elterninitiative Saarland,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Elterntreff_Dortmund,Elterntreff Dortmund,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+FC_Schalke_04,FC Schalke 04,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Ferrero,Ferrero,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Fight_for_Finn,Fight for Finn,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+FOX,Fox,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Gazi,Gazi,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Gemeinde_Dietingen,Gemeinde Dietingen,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Gillette,Gilette,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Head_and_Shoulders,Head and Shoulders,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Hugo_Boss,Hugo Boss,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Initiative_der_Kinder_und_Jugendklinik_Freiburg_e.V.,Initiative der Kinder- und Jugendklinik Freiburg e.V.,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Jamie_Jacobs,Jamie Jacobs,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+JBL,JBL,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Jd_Marketing_GmbH,Jd Marketing GmbH,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Jugendhilfe_Jona,Jugendhilfe Jona,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Kaliber5_SPORTS,Kaliber5 Sports,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+KiO_Kinderhilfe_Organtransplantation,KiO,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+KT01_Collection,KT01 Collection,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Kumpelkiste,Kumpelkiste,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Laureus_Sport_for_Good,Laureus Sport for Good,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Lavia_Trauergruppe,Lavia Trauergruppe,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Lays,Lays,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Living_a_Dream,Living a Dream,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Manuel_Neuer_Kids_Foundation,Manuel Neuer Kids Foundation,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Matthias_Ginter_Stiftung,Matthias Ginter Stiftung,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+McDavid_Football,McDavid Football,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+McDonalds,McDonalds,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Mein_Klub_Meine_Hilfe,Mein Klub Meine Hilfe,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Mercedes_AMG,Mercedes AMG,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+MobileWorld24,MobileWorld24,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+My_Topps,My Topps,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Nike,Nike,n.a.,n.a.,n.a.,n.a.,n.a.,2,2
+Nujeens_Dream,Nujeen's Dream,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Opel,Opel,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Pepsi,Pepsi,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+PlayStation,PlayStation,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Porsche_Jugendfoerderung,Porsche Jugendf̦rderung,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Puma,Puma,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Rewe,Rewe,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Rtl_Wir_Helfen_Kindern,RTL Wir Helfen Kindern,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Sami_Khedira_Stiftung,Sami Khedira Stiftung,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Show_Racism_the_Red_Card,Show Racism the Red Card,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Sky_Charity,Sky Charity,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Sony_Alpha,Sony Alpha,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+SportsTotal,SportsTotal,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Tag_Heuer,Tag Heuer,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Telekom,Telekom,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+The_Oezil_Charitable_Foundation,The Oezil Charitable Foundation,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Tiwi_Ndogo_e.V.,Tiwi Ndogo e.V.,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Toni_Kroos_Stiftung,Toni Kroos Stiftung,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Trostpflaster_Aktion,Trostpflaster Aktion,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Unicef,Unicef,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+United_Charity,United Charity,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
+Verlagsgruppe_Oetinger,Verlagsgruppe Oetinger,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Vodafone,Vodafone,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Weber,Weber,n.a.,n.a.,n.a.,n.a.,n.a.,2,1
+Young_Wings,Young Wings,n.a.,n.a.,n.a.,n.a.,n.a.,3,1
