@@ -1,0 +1,103 @@
+# Edge- und Nodelist koppeln
+
+# Gesamtnetzwerk dfb 
+
+# IGRAPH-OBJEKT
+
+library(igraph)
+# liest die Dateien direkt aus dem github-Verzeichnis ein
+el <- read.csv("https://raw.githubusercontent.com/hdm-rz015/DFB_Netzwerk/master/271018_Edgelist.csv", header=T, as.is=T, sep = ",")
+nodes <- read.csv("https://raw.githubusercontent.com/hdm-rz015/DFB_Netzwerk/master/271018_Nodelist.csv", header=T, as.is=T, sep = ",")
+
+# prüft, ob alle Variablen eingelesen wurden
+head(el)
+head(nodes)
+
+# wandelt die edgelist in eine Matrix um und baut das igraph-Objekt
+hties <-as.matrix(el)
+dfb <- graph_from_data_frame(d=hties, vertices=nodes, directed=F)
+dfb
+plot(dfb)
+
+# ---------------------------------------------------------
+  
+# EINFÄRBEN AUFGRUND VON VERTEXT ATTRIBUTEN
+  
+# Im Netzwerk sind Spieler, Engagement und Werbekooperationen abgelegt, die über das Vertex.Attribut $type mit "1" (Spieler) oder "2" (Werbekooperationen) oder "3" (soziales Engagement) kodiert sind.
+vertex.attributes(dfb)$type
+
+#Alle Spieler sollen nun mit der Farbe grün, alle Werbekooperationen mit der Farbe grau und soziales Engagement mit der Farbe blau visualisiert werden.
+
+#FARBEN nach Vertex-Attributen definieren
+faerbung <- c("green", "grey", "blue")
+
+#definiert das Farbspektrum, der verwendeten Farben und legt diese in einem neuen Vector faerbung fest. Da wir wissen, dass wir bei §Type nur drei Werte haben (Spieler, Werbekooperationen, soziales Engagement) brauchen wir auch drei Werte. Die direkten Farbpaletten sind hier hinterlegt: http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf.
+
+V(dfb)$color <- faerbung[V(dfb)$type]
+# weist dem Vertex-Attribut color die Funktion faerbung zu, die wir vorher mit drei Farben definiert haben.
+
+plot(dfb)
+
+
+
+# FORM DER AKTEURE ANPASSEN
+
+# definiert, dass alle Knoten als square auftreten
+V(dfb)$shape = "square"
+
+plot(dfb)
+
+# wöhlt alle Knoten aus, die das Vertex-Attribut "1" bei type gesetzt haben
+spieler <- V(dfb)[type == "1"]
+
+spieler
+
+# weist allen Werten von spieler den Shape "cirle" zu
+V(dfb)[spieler]$shape = "circle"
+
+plot(dfb)
+
+
+# DAS NETZWERK WIRD ENTZERRT MIT DER VARIABLE
+
+coords <- layout_with_kk(dfb)*0.9
+
+
+# RELATIVE WERTE DURCH DIE GRÖßEN DER KNOTEN ABBILDEN
+
+# berechnet den Degree-Wert für alle Knoten und weist ihm die Variable "knotengroesse" zu
+knotengroesse <- degree(dfb)
+knotengroesse
+
+# plottet da Netzwerk und ändert die Größe des Knotens nach dem Degree-Wert
+par(mfrow=c(1,1)) 
+
+# VERTEX-ATTRIBUTE, die immer für das GESAMTE NETZWERK gelten
+
+# bestimmt die farbliche Umrandung der Knoten
+vertex.attributes(dfb)$frame.color
+V(dfb)$frame.color = "black"
+
+# legt die Schrift der Knotenbezeichnungen fest 
+vertex.attributes(dfb)$label.family
+V(dfb)$label.family = "Helvetica"
+
+# legt die Schriftfarbe der Knotenbezeichnungen fest
+vertex.attributes(dfb)$label.color
+V(dfb)$label.color = "grey25"
+
+
+# EDGE-ATTRIBUTE, die immer für das GESAMTE NETZWERK gelten
+
+# legt die Kantenfarbe fest
+edge.attributes(dfb)$edge.color
+V(dfb)$edge.color = "grey80"
+
+
+plot(dfb, 
+     vertex.size=knotengroesse*4, # führt die relative Größe der Knoten aus
+     layout=coords, # entzerrt das Netzwerk
+     rescale=FALSE, ylim=c(-2,5),xlim=c(-7,7), asp = 0, # legt die Fenstergröße fest nach x- und y-Varianten
+     edge.curved=.2, # bestimmt den Krümmungsgrad der Kanten
+     edge.width=E(dfb)$weight, #legt die Kantenstärke fest
+     main="Gesamtnetzwerk DFB")
